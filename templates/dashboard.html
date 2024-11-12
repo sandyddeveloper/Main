@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8" />
+    <title>DEVNETX</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png" />
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendors/styles/core.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='vendors/styles/icon-font.min.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='src/plugins/datatables/css/dataTables.bootstrap4.min.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ url_for('static', filename='src/plugins/datatables/css/responsive.bootstrap4.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendors/styles/style.css') }}" />
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
+        crossorigin="anonymous"></script>
+
+</head>
+<style>
+    /* Form button styling */
+    .delete_btn {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .delete_btn:hover {
+        background-color: #c0392b;
+    }
+
+    /* Overlay styling for the "Delete" confirmation */
+    .action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .action form {
+        margin: 0;
+    }
+
+    /* Styling for the page's container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Popup message styling */
+    #popupMessage {
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #28a745;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        display: none;
+        z-index: 9999;
+    }
+</style>
+
+{% extends "base.html" %}
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4>Client Table</h4>
+                        </div>
+                        <nav aria-label="breadcrumb" role="navigation">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    DataTable
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right">
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                November 2024
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Export List</a>
+                                <a class="dropdown-item" href="#">Policies</a>
+                                <a class="dropdown-item" href="#">View Assets</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <h4 class="text-blue h4">Client Table with Export Buttons</h4>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export nowrap">
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">Id</th>
+                                <th>FirstName</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>Time</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for contact in contacts %}
+                            <tr>
+                                <td>{{ contact[0] }}</td>
+                                <td>{{ contact[1] }}</td>
+                                <td>{{ contact[2] }}</td>
+                                <td>{{ contact[3] }}</td>
+                                <td>{{ contact[4] }}</td>
+                                <td class="action">
+                                    <!-- Delete button -->
+                                    <form action="{{ url_for('deletecustomer', id=contact[0]) }}" method="POST">
+                                        <button class="delete_btn" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                                <div id="popupMessage"></div>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Export Datatable End -->
+        </div>
+
+        <!-- js -->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendors/scripts/core.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendors/scripts/script.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendors/scripts/process.js') }}"></script>
+        <script src="{{ url_for('static', filename='vendors/scripts/layout-settings.js') }}"></script>
+        <script src="{{ url_for('static', filename='src/plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
+        <script
+            src="{{ url_for('static', filename='src/plugins/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
+        <script
+            src="{{ url_for('static', filename='src/plugins/datatables/js/dataTables.responsive.min.js') }}"></script>
+        <script
+            src="{{ url_for('static', filename='src/plugins/datatables/js/responsive.bootstrap4.min.js') }}"></script>
+        <!-- buttons for Export datatable -->
+        <script src="{{ url_for('static', filename='src/plugins/datatables/js/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='src/plugins/datatables/js/buttons.bootstrap4.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='src/plugins/datatables/js/buttons.print.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='src/plugins/datatables/js/buttons.html5.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='src/plugins/datatables/js/buttons.flash.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='src/plugins/datatables/js/pdfmake.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='src/plugins/datatables/js/vfs_fonts.js') }}"></script>
+        <!-- Datatable Setting js -->
+        <script src="{{ url_for('static', filename='vendors/scripts/datatable-setting.js') }}"></script>
+
+
+        </body>
+
+</html>

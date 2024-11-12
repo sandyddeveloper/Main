@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <head>
+        <!-- Basic Meta Tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description"
+            content="DevNetx is a full-stack web development company specializing in innovative web solutions, SEO services, telebot integration, and custom web applications to help businesses grow." />
+        <meta name="keywords"
+            content="full-stack web development, SEO, telebot, web design, custom web applications, digital marketing, technology solutions, web development company" />
+        <meta name="author" content="DevNetx" />
+        <meta name="robots" content="index, follow" />
+        <!-- Tells search engines to index and follow the links on your pages -->
+
+        <!-- Canonical Tag (Prevents Duplicate Content Issues) -->
+        <link rel="canonical" href="https://yourwebsite.com" />
+
+        <!-- Title Tag (Most Important SEO Element) -->
+        <title>DevNetx - Full-Stack Web Development & Tech Solutions</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+        <!-- Open Graph Meta Tags for Social Sharing (Facebook, LinkedIn, etc.) -->
+        <meta property="og:title" content="DevNetx - Full-Stack Web Development & Tech Solutions" />
+        <meta property="og:description"
+            content="DevNetx is a leading company in full-stack web development, SEO, and custom web solutions. We specialize in delivering digital innovation and technology-driven success." />
+        <meta property="og:image" content="thumbnail.jpg" />
+        <!-- Replace with your image URL -->
+        <meta property="og:url" content="https://yourwebsite.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="DevNetx" />
+
+        <!-- Twitter Card Meta Tags (for Twitter sharing) -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="DevNetx - Full-Stack Web Development & Tech Solutions" />
+        <meta name="twitter:description"
+            content="DevNetx is a leading company in full-stack web development, SEO, and custom web solutions." />
+        <meta name="twitter:image" content="thumbnail.jpg" />
+        <!-- Replace with your image URL -->
+
+        <!-- Google Fonts (for Typography Optimization) -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+        <!-- Structured Data (JSON-LD) for SEO (Google Rich Snippets) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "DevNetx",
+          "url": "https://yourwebsite.com",
+          "logo": "https://yourwebsite.com/assets/images/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-800-123-4567",
+            "contactType": "Customer Service",
+            "areaServed": "IN",
+            "availableLanguage": "English"
+          },
+          "sameAs": [
+            "https://www.facebook.com/DevNetx",
+            "https://twitter.com/DevNetx",
+            "https://www.linkedin.com/company/devnetx"
+          ]
+        }
+      </script>
+
+        <!-- Hreflang Tag (Helps Search Engines Know Which Language and Region Your Page Is Targeting) -->
+        <link rel="alternate" href="https://yourwebsite.com" hreflang="en-us" />
+
+        <!-- Open Graph (OG) Image for Social Sharing -->
+        <meta property="og:image" content="thumbnail.jpg" />
+        <!-- Replace with your image URL -->
+        <meta property="og:image:secure_url" content="thumbnail.jpg" />
+        <!-- Ensure HTTPS URL -->
+
+        <!-- Additional SEO Best Practices -->
+        <meta name="robots" content="index, follow" />
+        <!-- Tells search engines to index the page and follow its links -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Ensures compatibility with Internet Explorer -->
+        <meta name="google-site-verification" content="your-google-site-verification-code" />
+        <!-- Google Search Console verification -->
+
+        <!-- Preventing NoFollow or NoIndex -->
+        <meta name="robots" content="index, follow" />
+        <!-- Ensures all pages are indexed by search engines -->
+
+        <!-- Facebook App ID (For Better Social Media Integration) -->
+        <meta property="fb:app_id" content="your-facebook-app-id" />
+
+        <!-- Title and Meta Tags for Pages -->
+        <meta property="og:title" content="DevNetx - Full-Stack Web Development & Tech Solutions" />
+        <meta name="twitter:title" content="DevNetx - Full-Stack Web Development & Tech Solutions" />
+    </head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h1>DEVNETX</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-brand ms-lg-3">Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="min-vh-100 d-flex align-items-center text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 data-aos="fade-left" class="text-uppercase text-white fw-semibold display-1">
+                        Dexterous Evolution For Versatile Networks and Evolutionary
+                        Technologies, eXecuted
+                    </h1>
+                    <h5 class="text-white mt-3 mb-4" data-aos="fade-right">
+                        Full-Stack Development, SEO, Telebots, and Web Innovation —
+                        Executed with Excellence
+                    </h5>
+                    <div data-aos="fade-up" data-aos-delay="50">
+                        <a href="#" class="btn btn-brand me-2">Explore Our Services</a>
+                        <a href="#" class="btn btn-light ms-2">View Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="soon" class="d-flex align-items-center justify-content-center text-center">
+        <div class="containers">
+            <!-- Corrected the closing quote in the url_for function -->
+            <video id='myVideo' src="{{ url_for('static', filename='images/soon.mp4') }}" autoplay muted></video>
+            <div id="overlay">
+                <button id='playButton'>Click to enable the sound</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="50">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">About Us</h1>
+                        <div class="line"></div>
+                        <p>
+                            At DevNetx, we are passionate about crafting innovative and
+                            high-quality digital experiences that drive success for
+                            businesses.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6" data-aos="fade-down" data-aos-delay="50">
+                    <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="About DevNetx" />
+                </div>
+                <div data-aos="fade-down" data-aos-delay="150" class="col-lg-5">
+                    <h1>About DevNetx</h1>
+                    <p class="mt-3 mb-4">
+                        DevNetx is a dedicated team of skilled developers and strategists
+                        focused on delivering end-to-end solutions in full-stack web
+                        development, SEO, telebots, and custom web applications.
+                    </p>
+                    <div class="d-flex pt-4 mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-code-box-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Expert Full-Stack Development</h5>
+                            <p>
+                                From frontend to backend, we build scalable, responsive
+                                websites and applications that exceed expectations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="iconbox me-4">
+                            <i class="ri-search-eye-fill"></i>
+                        </div>
+                        <div>
+                            <h5>SEO & Digital Marketing</h5>
+                            <p>
+                                Our SEO strategies and marketing expertise help brands stand
+                                out and reach their target audiences effectively.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="iconbox me-4">
+                            <i class="ri-robot-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Telebots & Automation</h5>
+                            <p>
+                                We design intelligent telebots to streamline customer
+                                interactions, enhance productivity, and simplify operations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section-padding border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Our Services</h1>
+                        <div class="line"></div>
+                        <p>
+                            At DevNetx, we specialize in delivering innovative, full-stack
+                            solutions for a diverse range of digital needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="150">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-computer-line"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Full-Stack Web Development</h5>
+                        <p>
+                            We build robust, scalable web applications from frontend to
+                            backend, tailored to drive business growth.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="250">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-search-eye-line"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">SEO & Digital Marketing</h5>
+                        <p>
+                            Boost your online presence with our proven SEO strategies and
+                            digital marketing expertise.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="350">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-robot-line"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Telebots & Automation</h5>
+                        <p>
+                            Automate customer interactions and streamline workflows with our
+                            custom-built telebot solutions.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="450">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-paint-brush-line"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Web Design & Branding</h5>
+                        <p>
+                            Enhance your brand’s identity with compelling designs and a
+                            seamless user experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="550">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-global-line"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Web Application Development</h5>
+                        <p>
+                            Build powerful web applications tailored to meet your unique
+                            business needs and goals.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay="650">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-code-s-slash-line"></i>
+                        </div>
+                        <h5 class="mt-4 mb-3">Frontend Development</h5>
+                        <p>
+                            Create stunning, responsive interfaces that engage users and
+                            enhance their online experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTER -->
+    <section id="counter" class="section-padding">
+        <div class="container text-center">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="150">
+                    <h1 class="text-white display-4">03</h1>
+                    <h6 class="text-uppercase mb-0 text-white mt-3">Total Project</h6>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="250">
+                    <h1 class="text-white display-4">03</h1>
+                    <h6 class="text-uppercase mb-0 text-white mt-3">Trusted Clients</h6>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="350">
+                    <h1 class="text-white display-4">08</h1>
+                    <h6 class="text-uppercase mb-0 text-white mt-3">Themes Designed</h6>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="450">
+                    <h1 class="text-white display-4">03</h1>
+                    <h6 class="text-uppercase mb-0 text-white mt-3">Team Members</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">Team Members</h1>
+                        <div class="line"></div>
+                        <p>
+                            We love to craft digital experiances for brands rather than crap
+                            and more lorem ipsums and do crazy skills
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="team-member image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="{{ url_for('static', filename='images/person-1.jpg') }}" alt="" />
+                        </div>
+                        <div class="team-member-content">
+                            <h4 class="text-white">Santhosh Raj</h4>
+                            <p class="mb-0 text-white">Full Stack Devloper</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
+                    <div class="team-member image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="{{ url_for('static', filename='images/person-2.jpg') }}" alt="" />
+                        </div>
+                        <div class="team-member-content">
+                            <h4 class="text-white">Rafiq</h4>
+                            <p class="mb-0 text-white">Backend Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
+                    <div class="team-member image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="{{ url_for('static', filename='images/person-3.jpg') }}" alt="" />
+                        </div>
+                        <div class="team-member-content">
+                            <h4 class="text-white">Suresh</h4>
+                            <p class="mb-0 text-white">Python Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section-padding bg-light" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 text-dark fw-semibold">Get in Touch</h1>
+                        <div class="line bg-dark"></div>
+                        <p class="text-light font-italic">
+                            We specialize in creating bespoke digital experiences that
+                            elevate your brand and leave a lasting impression.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="250">
+                <div class="col-lg-8">
+                    <form action="{{ url_for('contact') }}" method="POST" {{ get_flashed_messages() | safe }}
+                        class="row g-3 p-lg-5 p-4 bg-white theme-shadow">
+                        <div class="form-group col-lg-6">
+                            <label for="first-name" class="visually-hidden">First Name</label>
+                            <input type="text" id="fname" name="firstName" class="form-control"
+                                placeholder="Enter first name" required />
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="last-name" class="visually-hidden">Last Name</label>
+                            <input type="text" id="lname" name="lastName" class="form-control"
+                                placeholder="Enter last name" required />
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="email" class="visually-hidden">Email Address</label>
+                            <input type="email" id="email" name="Email" class="form-control"
+                                placeholder="Enter email address" required />
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="subject" class="visually-hidden">Subject</label>
+                            <input type="text" id="subject" name="Subject" class="form-control"
+                                placeholder="Enter subject" />
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <label for="message" class="visually-hidden">Message</label>
+                            <textarea id="message" name="Message" rows="5" class="form-control"
+                                placeholder="Enter your message" required></textarea>
+                        </div>
+                        <div class="form-group col-lg-12 d-grid">
+                            <button type="submit" class="btn btn-brand">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    <div id="popupMessage">Your message has been sent successfully!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="150">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold">
+                            Latest Insights & Developments
+                        </h1>
+                        <div class="line"></div>
+                        <p>
+                            At DevNetx, we empower businesses with cutting-edge solutions,
+                            blending innovation, technology, and expertise to deliver
+                            exceptional results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="150">
+                    <div class="blog-post image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="{{ url_for('static', filename='images/blog-post-1.jpg') }}"
+                                alt="Blog post on Full-stack Development Trends" class="img-fluid rounded" />
+                        </div>
+                        <h5 class="mt-4">Full-stack Development Trends in 2024</h5>
+                        <p>
+                            Discover the emerging trends in full-stack web development and
+                            how businesses are adapting to new technologies for scalable
+                            solutions.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="250">
+                    <div class="blog-post image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="{{ url_for('static', filename='images/blog-post-2.jpg') }}"
+                                alt="Blog post on Effective SEO Strategies" class="img-fluid rounded" />
+                        </div>
+                        <h5 class="mt-4">
+                            SEO Strategies for 2024: Boosting Online Visibility
+                        </h5>
+                        <p>
+                            Learn about the latest SEO techniques and strategies that will
+                            help your brand rank higher and engage a larger audience in the
+                            digital space.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-down" data-aos-delay="350">
+                    <div class="blog-post image-zoom">
+                        <div class="image-zoom-wrapper">
+                            <img src="{{ url_for('static', filename='images/blog-post-3.jpg') }}"
+                                alt="Blog post on Telebot Development" class="img-fluid rounded" />
+                        </div>
+                        <h5 class="mt-4">The Future of Telebot Development in 2024</h5>
+                        <p>
+                            Explore how telebots are transforming customer service and how
+                            they can be integrated into your business to provide a seamless
+                            user experience.
+                        </p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="col-lg-3 col-sm-6">
+                        <h1 class="mb-0 text-white">DEVNETX</h1>
+                        <div class="line"></div>
+                        <p class="text-light font-italic">
+                            Innovating digital landscapes and delivering transformative web
+                            solutions. Your success is our mission.
+                        </p>
+                        <div class="social-icons mt-3">
+                            <a href="#" class="social-icon"><i class="ri-twitter-fill"></i></a>
+                            <a href="#" class="social-icon"><i class="ri-instagram-fill"></i></a>
+                            <a href="#" class="social-icon"><i class="ri-github-fill"></i></a>
+                            <a href="#" class="social-icon"><i class="ri-dribbble-fill"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">SERVICES</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li><a href="#">UI Design</a></li>
+                            <li><a href="#">UX Design</a></li>
+                            <li><a href="#">Branding</a></li>
+                            <li><a href="#">Logo Designing</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">ABOUT</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">CONTACT</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li>devxnet@gmail.com</li>
+                            <li>+91 12345678+</li>
+                            <li>www.DevNetx.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">© Copyright DevNetx. All Rights Reserved</p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="mb-0">Designed by <a href="#">SANTHOSH RAJ</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
