@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}DEVNETX - Customers{% endblock %}
+{% block content %}
+<style>
+    .delete_btn {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .delete_btn:hover {
+        background-color: #c0392b;
+    }
+
+    .delete_btn:focus {
+        outline: 2px solid #e74c3c;
+        outline-offset: 2px;
+    }
+
+    .delete_btn:active {
+        background-color: #a93226;
+    }
+</style>
+<div class="min-height-200px">
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="title">
+                    <h4>Client Table</h4>
+                </div>
+                <nav aria-label="breadcrumb" role="navigation">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            DataTable
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="col-md-6 col-sm-12 text-right">
+                <div class="dropdown">
+                    <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        November 2024
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Export List</a>
+                        <a class="dropdown-item" href="#">Policies</a>
+                        <a class="dropdown-item" href="#">View Assets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Datatable start -->
+    <div class="card-box mb-30">
+        <div class="pd-20">
+            <h4 class="text-blue h4">Client Table with Export Buttons</h4>
+        </div>
+        <div class="pb-20">
+            <table class="table hover multiple-select-row data-table-export nowrap">
+                <thead>
+                    <tr>
+                        <th class="table-plus datatable-nosort">Id</th>
+                        <th>FirstName</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <td>{{ contact[0] }}</td>
+                        <td>{{ contact[1] }}</td>
+                        <td>{{ contact[2] }}</td>
+                        <td>{{ contact[3] }}</td>
+                        <td>{{ contact[4] }}</td>
+                        <td class="action">
+                            <!-- Delete button -->
+                            <form action="{{ url_for('deletecustomer', id=contact[0]) }}" method="POST">
+                                <button class="delete_btn" type="submit">Delete</button>
+                            </form>
+                        </td>
+                        <div id="popupMessage"></div>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Export Datatable End -->
+</div>
+{% endblock %}
